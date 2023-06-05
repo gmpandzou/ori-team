@@ -1,0 +1,19 @@
+version: '3.9'
+#here we define the differents services that make up our compose
+services:
+  #wordpress service definition for FARGATE in ecs cluster
+  wordpress:
+   image: wordpress:latest
+   ports:
+     - '80:80'
+   restart: always
+   environment:
+     WORDPRESS_DB_HOST: terraform-20230601194215896200000002.czvmhsz23ywh.us-east-1.rds.amazonaws.com:3306
+     WORDPRESS_DB_USER: oriuser2023
+     WORDPRESS_DB_PASSWORD: Mp$ndzou1989
+     WORDPRESS_DB_NAME: oridb2023
+     #WORDPRESS_DB_WAIT_TIME: 1
+     WORDPRESS_ADMIN_EMAIL: gaelducongo@yahoo.com
+     WORDPRESS_ADMIN_PASSWORD: Mp$ndzou1989
+     WORDPRESS_ADMIN_USER: wpuser2023
+     WORDPRESS_SITE_TITLE: ORI DEVOPS TEAM - CARD 220064
